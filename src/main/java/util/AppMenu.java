@@ -51,15 +51,30 @@ public class AppMenu {
         System.out.println("Set hero name");
         String name = ScannerUtil.getString();
         unit.setName(name);
-        System.out.println("Set hero Charisma");
+        System.out.println("Set hero Charisma. (Basic " + unit.getClass().getSimpleName() +
+                " Charisma = " + unit.getCharisma() + ")");
         unit.setCharisma(unit.getCharisma() + ScannerUtil.getInt());
-        System.out.println("Set hero Stamina");
+        System.out.println("Set hero Stamina. (Basic " + unit.getClass().getSimpleName() +
+                " Stamina = " + unit.getStamina() + ")");
         unit.setStamina(unit.getStamina() + ScannerUtil.getInt());
-        System.out.println("Set hero Intellect");
+        System.out.println("Set hero Intellect. (Basic " + unit.getClass().getSimpleName() +
+                " Intellect = " + unit.getIntellect() + ")");
         unit.setIntellect(unit.getIntellect() + ScannerUtil.getInt());
-        System.out.println("Set hero Stamina");
+        System.out.println("Set hero Agility. (Basic " + unit.getClass().getSimpleName() +
+                " Agility = " + unit.getAgility() + ")");
         unit.setAgility(unit.getAgility() + ScannerUtil.getInt());
-        System.out.println("Set hero Agility");
+        System.out.println("Set hero Concentration. (Basic " + unit.getClass().getSimpleName() +
+                " Concentration = " + unit.getCharisma() + ")");
         unit.setConcentration(unit.getConcentration() + ScannerUtil.getInt());
+    }
+
+    private static int pointsValue(int maxPointValue){
+        while (true){
+            int inputPointValue = ScannerUtil.getInt();
+            if(maxPointValue >= inputPointValue && inputPointValue < 0){
+                return inputPointValue;
+            }
+            System.out.println("To much points");
+        }
     }
 }
