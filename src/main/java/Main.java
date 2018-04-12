@@ -1,9 +1,15 @@
-/**
- * Created by yurezzz13 on 02.04.18.
- */
+
+import util.AppMenu;
+
 public class Main {
 
     public static void main(String[] args) {
 
+        AppMenu.printWelcomeMessage();
+        AppMenu.printHeroesVariants();
+        AppMenu.heroChoosing();
+
+
     }
 }
+
