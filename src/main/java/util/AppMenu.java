@@ -49,47 +49,47 @@ public class AppMenu {
                 "concentration = 5;");
     }
 
-    public static void heroChoosing(){
+    public static void heroChoosing() {
         int input = ScannerUtil.getInt();
-        if(input == 1){
+        if (input == 1) {
             Unit unit = new HumanPriest();
             printHeroStartStats(unit);
             setHeroStats(unit);
             printHeroStats(unit);
-        }else if(input == 2){
+        } else if (input == 2) {
             Unit unit = new HumanPaladin();
             printHeroStartStats(unit);
             setHeroStats(unit);
             printHeroStats(unit);
-        }else if(input == 3){
+        } else if (input == 3) {
             Unit unit = new DwarfWarrior();
             printHeroStartStats(unit);
             setHeroStats(unit);
             printHeroStats(unit);
-        }else if(input == 4){
+        } else if (input == 4) {
             Unit unit = new DwarfMechanist();
             printHeroStartStats(unit);
             setHeroStats(unit);
             printHeroStats(unit);
-        }else if(input == 5){
+        } else if (input == 5) {
             Unit unit = new ElfMage();
             printHeroStartStats(unit);
             setHeroStats(unit);
             printHeroStats(unit);
-        }else if(input == 6){
+        } else if (input == 6) {
             Unit unit = new ElfGunslinger();
             printHeroStartStats(unit);
             setHeroStats(unit);
             printHeroStats(unit);
-        }else System.out.println("Invalid input");
+        } else System.out.println("Invalid input");
     }
 
-    public static int getAdditionalPoint(){
+    public static int getAdditionalPoint() {
         int additionalPoint = ScannerUtil.getInt();
         return additionalPoint;
     }
 
-    public static void setHeroStats(Unit unit){
+    public static void setHeroStats(Unit unit) {
         System.out.println("Add from 1 to 10 additional points to charisma");
         setHeroCharisma(unit, getAdditionalPoint());
         System.out.println("Add from 1 to 10 additional points to stamina");
@@ -102,27 +102,31 @@ public class AppMenu {
         setHeroConcentration(unit, getAdditionalPoint());
     }
 
-    public static void printHeroStats(Unit unit){
+    public static void printHeroStats(Unit unit) {
         System.out.println("charisma = " + unit.getCharisma() + "\n"
-               + "stamina = " + unit.getStamina()+ "\n"
-                + "intellect = " + unit.getIntellect()+ "\n"
-                + "agility = " + unit.getAgility()+ "\n"
-                + "concentration = " + unit.getConcentration()+ "\n");
+                + "stamina = " + unit.getStamina() + "\n"
+                + "intellect = " + unit.getIntellect() + "\n"
+                + "agility = " + unit.getAgility() + "\n"
+                + "concentration = " + unit.getConcentration() + "\n");
     }
 
-    public static void setHeroCharisma(Unit unit, int additionalPoint){
+    public static void setHeroCharisma(Unit unit, int additionalPoint) {
         unit.setCharisma(unit.getCharisma() + additionalPoint);
     }
-    public static void setHeroStamina(Unit unit, int additionalPoint){
+
+    public static void setHeroStamina(Unit unit, int additionalPoint) {
         unit.setStamina(unit.getStamina() + additionalPoint);
     }
-    public static void setHeroIntellect(Unit unit, int additionalPoint){
+
+    public static void setHeroIntellect(Unit unit, int additionalPoint) {
         unit.setIntellect(unit.getIntellect() + additionalPoint);
     }
-    public static void setHeroAgility(Unit unit, int additionalPoint){
+
+    public static void setHeroAgility(Unit unit, int additionalPoint) {
         unit.setAgility(unit.getAgility() + additionalPoint);
     }
-    public static void setHeroConcentration(Unit unit, int additionalPoint){
+
+    public static void setHeroConcentration(Unit unit, int additionalPoint) {
         unit.setConcentration(unit.getConcentration() + additionalPoint);
     }
 
