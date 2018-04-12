@@ -1,4 +1,3 @@
-
 import util.AppMenu;
 
 public class Main {
@@ -8,8 +7,6 @@ public class Main {
         AppMenu.printWelcomeMessage();
         AppMenu.printHeroesVariants();
         AppMenu.heroChoosing();
-
-
     }
 }
 

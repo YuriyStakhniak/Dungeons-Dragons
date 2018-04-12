@@ -3,32 +3,31 @@ package hero;
 
 public interface Unit {
 
-    public boolean isLeader();
+    boolean isLeader();
 
-    public void setLeader(boolean leader);
+    void setLeader(boolean leader);
 
-    public String getName();
+    String getName();
 
-    public void setName(String name);
+    void setName(String name);
 
-    public int getCharisma();
+    int getCharisma();
 
-    public void setCharisma(int charisma);
+    void setCharisma(int charisma);
 
-    public int getStamina();
+    int getStamina();
 
-    public void setStamina(int stamina);
+    void setStamina(int stamina);
 
-    public int getIntellect();
+    int getIntellect();
 
-    public void setIntellect(int intellect);
+    void setIntellect(int intellect);
 
-    public int getAgility();
+    int getAgility();
 
-    public void setAgility(int agility);
+    void setAgility(int agility);
 
-    public int getConcentration();
+    int getConcentration();
 
-    public void setConcentration(int concentration);
-
+    void setConcentration(int concentration);
 }
