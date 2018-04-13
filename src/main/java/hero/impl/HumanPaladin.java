@@ -10,6 +10,7 @@ public class HumanPaladin extends Human implements Paladin, Unit {
     @Override
     public String toString() {
         return ("Human Paladin " + this.getName() + "\n" +
+                "------------------------" + "\n" +
                 "charisma = " + this.getCharisma() + "\n"
                 + "stamina = " + this.getStamina() + "\n"
                 + "intellect = " + this.getIntellect() + "\n"

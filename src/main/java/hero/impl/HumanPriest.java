@@ -10,6 +10,7 @@ public class HumanPriest extends Human implements Priest, Unit {
     @Override
     public String toString() {
         return ("Human Priest " + this.getName() + "\n" +
+                "------------------------" + "\n" +
                 "charisma = " + this.getCharisma() + "\n"
                 + "stamina = " + this.getStamina() + "\n"
                 + "intellect = " + this.getIntellect() + "\n"
