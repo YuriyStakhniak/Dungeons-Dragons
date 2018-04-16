@@ -7,7 +7,8 @@ import hero.impl.*;
 
 public class AppMenu {
 
-    private static final int USER_POINTS = 10;
+    private static final int MIN_MENU_INPUT = 1;
+    private static final int MAX_MENU_INPUT = 6;
 
     public static void printWelcomeMessage() {
         System.out.println("Hello! Welcome to Good Old Quest\n");
@@ -21,32 +22,35 @@ public class AppMenu {
     }
 
     public static void heroChoosing() {
-        int input = ScannerUtil.getInt();
-        if (input == 1) {
-            Unit unit = new HumanPriest();
-            setHeroStats(unit);
-            System.out.println(unit);
-        } else if (input == 2) {
-            Unit unit = new HumanPaladin();
-            setHeroStats(unit);
-            System.out.println(unit);
-        } else if (input == 3) {
-            Unit unit = new DwarfWarrior();
-            setHeroStats(unit);
-            System.out.println(unit);
-        } else if (input == 4) {
-            Unit unit = new DwarfMechanist();
-            setHeroStats(unit);
-            System.out.println(unit);
-        } else if (input == 5) {
-            Unit unit = new ElfMage();
-            setHeroStats(unit);
-            System.out.println(unit);
-        } else if (input == 6) {
-            Unit unit = new ElfGunslinger();
-            setHeroStats(unit);
-            System.out.println(unit);
-        } else System.out.println("Invalid input");
+        while (ScannerUtil.getScanner().hasNext()) {
+            int input = ScannerUtil.getInt();
+            if (input > MAX_MENU_INPUT || input < MIN_MENU_INPUT) {
+                System.out.println("Choose from 1 to 6");
+            } else {
+                switch (input) {
+                    case 1:
+                        humanPriestInit();
+                        break;
+                    case 2:
+                        humanPaladinInit();
+                        break;
+                    case 3:
+                        dwarfWarriorInit();
+                        break;
+                    case 4:
+                        dwarfMechanistInit();
+                        break;
+                    case 5:
+                        elfMageInit();
+                        break;
+                    case 6:
+                        elfGunslingerInit();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 
     private static void setHeroStats(Unit unit) {
@@ -56,16 +60,6 @@ public class AppMenu {
         setHeroIntellect(unit);
         setHeroAgility(unit);
         setHeroConcentration(unit);
-    }
-
-    private static int pointsValue(int maxPointValue) {
-        while (true) {
-            int inputPointValue = ScannerUtil.getInt();
-            if (maxPointValue >= inputPointValue && inputPointValue < 0) {
-                return inputPointValue;
-            }
-            System.out.println("To much points");
-        }
     }
 
     private static void setHeroName(Unit unit) {
@@ -102,5 +96,41 @@ public class AppMenu {
         System.out.println("Set hero Concentration. (Basic " + unit.getClass().getSimpleName() +
                 " Concentration = " + unit.getCharisma() + ")");
         unit.setConcentration(unit.getConcentration() + ScannerUtil.getInt());
+    }
+
+    private static void elfGunslingerInit() {
+        Unit unit = new ElfGunslinger();
+        setHeroStats(unit);
+        System.out.println(unit);
+    }
+
+    private static void humanPriestInit() {
+        Unit unit = new HumanPriest();
+        setHeroStats(unit);
+        System.out.println(unit);
+    }
+
+    private static void humanPaladinInit() {
+        Unit unit = new HumanPaladin();
+        setHeroStats(unit);
+        System.out.println(unit);
+    }
+
+    private static void dwarfWarriorInit() {
+        Unit unit = new DwarfWarrior();
+        setHeroStats(unit);
+        System.out.println(unit);
+    }
+
+    private static void dwarfMechanistInit() {
+        Unit unit = new DwarfMechanist();
+        setHeroStats(unit);
+        System.out.println(unit);
+    }
+
+    private static void elfMageInit() {
+        Unit unit = new ElfMage();
+        setHeroStats(unit);
+        System.out.println(unit);
     }
 }

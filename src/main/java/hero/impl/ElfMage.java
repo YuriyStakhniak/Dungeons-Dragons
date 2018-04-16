@@ -1,11 +1,10 @@
 package hero.impl;
 
 
-import hero.Unit;
 import profession.Mage;
 import race.Elf;
 
-public class ElfMage extends Elf implements Mage, Unit {
+public class ElfMage extends Elf implements Mage {
 
     @Override
     public String toString() {

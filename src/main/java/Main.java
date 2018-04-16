@@ -1,4 +1,5 @@
 import util.AppMenu;
+import util.ScannerUtil;
 
 public class Main {
 
@@ -7,6 +8,9 @@ public class Main {
         AppMenu.printWelcomeMessage();
         AppMenu.printHeroesVariants();
         AppMenu.heroChoosing();
+
+
+
     }
 }
 

@@ -1,33 +1,31 @@
 package hero;
 
+import lombok.Getter;
+import lombok.Setter;
 
-public interface Unit {
+@Getter
+@Setter
+public abstract class Unit {
+    private boolean isLeader;
+    private String name;
 
-    boolean isLeader();
+    public abstract int getCharisma();
 
-    void setLeader(boolean leader);
+    public abstract void setCharisma(int charisma);
 
-    String getName();
+    public abstract int getStamina();
 
-    void setName(String name);
+    public abstract void setStamina(int stamina);
 
-    int getCharisma();
+    public abstract int getIntellect();
 
-    void setCharisma(int charisma);
+    public abstract void setIntellect(int intellect);
 
-    int getStamina();
+    public abstract int getAgility();
 
-    void setStamina(int stamina);
+    public abstract void setAgility(int agility);
 
-    int getIntellect();
+    public abstract int getConcentration();
 
-    void setIntellect(int intellect);
-
-    int getAgility();
-
-    void setAgility(int agility);
-
-    int getConcentration();
-
-    void setConcentration(int concentration);
+    public abstract void setConcentration(int concentration);
 }

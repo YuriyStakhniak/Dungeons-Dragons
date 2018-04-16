@@ -11,7 +11,7 @@ public class ScannerUtil {
         throw new IllegalStateException("Can't create instance of ScannerUtil");
     }
 
-    private static Scanner getScanner() {
+    public static Scanner getScanner() {
         if (scanner == null) {
             scanner = new Scanner(System.in);
         }
